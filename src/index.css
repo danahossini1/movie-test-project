@@ -1,0 +1,648 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+@font-face {
+    font-family: 'yekan';
+    src: url("../fonts/yekanweb.eot");
+    src: url("../fonts/yekanweb.eot?#iefix") format("embedded-opentype"), url("../fonts/yekanweb.woff") format("woff"), url("../fonts/yekanweb.ttf") format("truetype"), url("../fonts/yekanweb.svg#web_Yekan") format("svg");
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+@font-face {
+    font-family: 'numbers';
+    src: url("../fonts/yekannumbers.eot");
+    src: url("../fonts/yekannumbers.eot?#iefix") format("embedded-opentype"), url("../fonts/yekannumbers.woff") format("woff"), url("../fonts/yekannumbers.ttf") format("truetype"), url("../fonts/yekannumbers.svg#web_Yekan") format("svg");
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'yekan', 'numbers';
+    font-size: 14px;
+    color: #505050;
+    background-color: #fff;
+    overflow-x: hidden;
+    direction: rtl;
+}
+
+:root {
+    --color-hover: #FF393A;
+    --gray-color: #575757;
+    --white-color: #fff;
+    --gray-text-color: #868686;
+    --black-text-color: #2D2927;
+    --blue-color: #3996FF;
+}
+
+.snipTrans {
+
+    transition: all 0.5s;
+
+}
+
+.minH {
+    min-height: 90vh !important;
+}
+
+.Links {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.4s all;
+    cursor: pointer;
+}
+
+.inputes {
+    display: block;
+    width: 80%;
+    height: 55px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 25px;
+}
+
+.inputes:focus {
+    outline: none;
+}
+
+.input-true {
+    border: 4px solid #0862c3;
+}
+
+.input-false {
+    border: 4px solid #e4242b;
+
+}
+
+
+.Links:hover {
+    color: rgba(232, 27, 0, 0.867);
+
+}
+
+.btnError:hover {
+    transform: translateX(10rem);
+}
+
+.scroll-bar {
+    height: 10px;
+    background-color: #035de4;
+    /* border:2px solid black; */
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.scroll-prograss {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    height: 100%;
+    background-color: var(--color-hover);
+    box-shadow: 0 0 10px black;
+}
+
+/* header */
+.top-nav {
+    width: 100%;
+    height: 2rem;
+    background-color: #F1F1F1;
+    border-bottom: 1px solid #D3D3D3;
+}
+
+.top-nav-right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 1rem;
+    font-size: 1rem;
+}
+
+.top-nav-right {
+    padding: 0 0.5rem;
+}
+
+.top-nav-right i {
+    color: var(--gray-text-color);
+    cursor: pointer;
+    transition: 0.4s all;
+}
+
+.top-nav-right i:hover {
+    color: var(--color-hover);
+}
+
+.top-nav-left {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.center-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.center-nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 7rem;
+}
+
+.center-nav-left {
+    border: 1px solid var(--gray-text-color);
+    border-radius: 3px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.center-nav-left input {
+    outline: none;
+    border: none;
+    padding: 0 1rem;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.center-nav-left div {
+    font-size: 1.4rem;
+    border-right: 1px solid var(--gray-text-color);
+    height: 100%;
+    padding: 0.5rem 1rem;
+    color: var(--gray-text-color);
+}
+
+.center-nav-left div:hover {
+    transition: 0.4s all;
+    cursor: pointer;
+    color: var(--color-hover);
+}
+
+.navbar-main {
+    background-color: #2D2927;
+    height: 2.8rem;
+}
+
+.navbar-main ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    /* gap: 1rem; */
+    color: var(--white-color);
+    height: 100%;
+}
+
+.navbar-main li a {
+    text-decoration: none;
+    color: var(--white-color);
+    transition: 0.4s all;
+
+}
+
+.navbar-main li a:hover {
+    color: var(--color-hover);
+}
+
+.dropdown-nav {
+    position: relative;
+}
+
+.dropdown-nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: absolute;
+    z-index: 999;
+    top: 7.4rem;
+    right: 4rem;
+    width: 13rem;
+    height: 0rem;
+    padding: 0 1.5rem 0 0;
+    visibility: hidden;
+    transition: 0.5s all;
+}
+
+.dropdown-nav:hover ul {
+    visibility: visible;
+}
+
+.dropdown-nav ul li {
+    display: flex;
+    align-items: center;
+
+    padding: 0.6rem;
+    width: 100%;
+
+    background-color: #2D2927;
+}
+
+.dropdown-nav ul i {
+    color: var(--color-hover);
+    z-index: 1;
+
+}
+
+/* End header */
+/* aside */
+.aside {
+    border: 1px solid var(--gray-text-color);
+    margin-top: 3rem;
+    border-radius: 3px;
+    padding: 0;
+}
+
+.aside div:nth-child(1) {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--gray-text-color);
+}
+
+.aside div:nth-child(1) i {
+    font-size: 2rem;
+    color: var(--color-hover);
+}
+
+.aside ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-right: 0;
+    overflow: hidden;
+}
+
+.aside ul li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed var(--gray-text-color);
+    width: 100%;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+.aside ul li:hover {
+    transition: 0.5s all;
+    transform: translateX(-20px);
+}
+
+.aside ul li a {
+    text-decoration: none;
+    color: var(--gray-color);
+    transition: 0.5s all;
+    font-weight: 700;
+}
+
+.aside ul li a:hover {
+
+    color: var(--color-hover);
+}
+
+.badge-custom {
+    width: 2rem;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--color-hover);
+    padding: 0.5rem;
+    border-radius: 20%;
+    color: var(--white-color);
+}
+
+.aside-visited {
+    border: 1px solid var(--gray-text-color);
+    margin-top: 3rem;
+    border-radius: 3px;
+    padding: 0;
+
+}
+
+.aside-visited .visiteed-header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid var(--gray-text-color);
+}
+
+.aside-visited ul {
+    list-style-type: none;
+    padding: 1rem 1rem;
+}
+
+.aside-visited ul li {
+    list-style-type: none;
+    display: flex;
+    gap: 0.5rem;
+    border-bottom: 1px dashed var(--gray-text-color);
+    padding: 1rem 0;
+}
+
+.aside-visited ul li a {
+    text-decoration: none;
+    color: var(--gray-color);
+    transition: 0.5s all;
+    font-weight: 700;
+}
+
+.aside-visited ul li a:hover {
+    color: #bb2121;
+    transition: 0.5s all;
+    font-weight: 700;
+}
+
+.aside-visited ul li .visited-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.aside-visited ul li .visited-details div {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.visited-details>p:first-child:hover {
+    transition: 0.4s all;
+    color: var(--color-hover);
+    cursor: pointer;
+}
+
+/* End aside */
+/* main */
+.top-slider {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 100%;
+    border: 1px solid var(--gray-text-color);
+    border-radius: 5px;
+
+}
+
+.top-left-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-right: 1px solid var(--gray-text-color);
+
+}
+
+.top-left-slider p {
+    color: var(--gray-text-color);
+}
+
+.top-left-slider .data {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.top-left-slider .data div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.top-right-slider {
+    padding: 0.7rem;
+    height: 100%;
+}
+
+.bottom-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: 0.5rem;
+
+}
+
+.bottom-slider .bottom-left-slider {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.bottom-slider .bottom-left-slider div {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--black-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: var(--white-color);
+    transition: 0.4s all;
+    font-size: 1.2rem;
+    border-bottom: 3px solid var(--color-hover);
+
+}
+
+.bottom-slider .bottom-left-slider div:hover {
+    color: var(--color-hover);
+}
+
+.bottom-right-slider div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7rem;
+    width: 9rem;
+    height: 2.5rem;
+    background-color: var(--blue-color);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: 0.4s all;
+}
+
+.bottom-right-slider div:hover {
+    background-color: var(--color-hover);
+
+}
+
+.bottom-right-slider div i {
+    font-size: 1.2rem;
+    color: var(--white-color);
+}
+
+.bottom-right-slider div a {
+    color: var(--white-color);
+    text-decoration: none;
+}
+
+/* End main */
+/* Footer */
+
+.footer {
+    background-color: var(--black-text-color);
+    color: var(--white-color);
+    padding: 2rem 0;
+    width: 100%;
+    border-top: 4px solid var(--color-hover);
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: right;
+    position: relative;
+}
+
+#footer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.footer-right,
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+
+}
+
+.footer-right h5 {
+    border-bottom: 1px solid var(--gray-text-color);
+    width: 100%;
+    padding: 1rem;
+
+}
+
+.footer-right div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+    list-style-type: var(--color-hover);
+}
+
+.footer-right div ul {
+    list-style: none;
+    /* Remove default bullets */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    gap: 0.7rem;
+}
+
+.footer-right div ul li a {
+    text-decoration: none;
+    color: var(--white-color);
+    transition: 0.4s all;
+}
+
+.footer-right div ul li a:hover {
+    text-decoration: none;
+    color: var(--color-hover);
+    margin-right: 0.5rem;
+}
+
+.footer-right div ul li::before {
+    content: "\2022";
+    /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--color-hover);
+    /* Change the color */
+    font-weight: bold;
+    /* If you want it to be bold */
+    display: inline-block;
+    /* Needed to add space between the bullet and the text */
+    width: 1em;
+    /* Also needed for space (tweak if needed) */
+    margin-left: 0;
+    /* Also needed for space (tweak if needed) */
+}
+
+.footer-left-top-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3rem;
+}
+
+.footer-left-top-icon div {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--white-color);
+    color: var(--black-text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.4s all;
+    font-size: 1.2rem;
+}
+
+.footer-left-top-icon div:hover {
+
+    color: var(--color-hover);
+
+}
+
+.footer-left-bottom {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+}
+
+.footer-left-bottom p {
+
+    line-height: 2rem;
+}
+
+.footer-left-bottom strong {
+    color: var(--color-hover);
+    margin: 0 0.5rem;
+}
+
+/* End Footer */
+
+@media screen and (max-width:530px) {
+    .dropdown-nav ul {
+        font-size: 14px;
+        top: 13.7rem;
+        right: 15px;
+        /* width: 12.5rem; */
+        height: 0rem;
+    }
+}
+@media screen and (max-width:450px) {
+    .dropdown-nav ul {
+        font-size: 14px;
+        top: 14rem;
+        right: -50px;
+        width: 9rem;
+    }
+    .md-respons{
+        font-size: 16px !important;
+    }
+    .sm-respons{
+        font-size: 10px !important;
+    }
+}
